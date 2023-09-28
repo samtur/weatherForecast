@@ -1,0 +1,273 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.hidden {
+    display: none;
+}
+
+:root {
+    --bgColor: #d2d6d9;
+    --fontColor: #2b2e33;
+
+}
+
+ul {
+    list-style: none;
+}
+
+@font-face {
+    font-family: "InterThin";
+    src: url("fonts/Inter-Thin.ttf") format("truetype");
+    font-weight: 100;
+}
+
+@font-face {
+    font-family: "InterExtraLight";
+    src: url("fonts/Inter-ExtraLight.ttf") format("truetype");
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: "InterLight";
+    src: url("fonts/Inter-Light.ttf") format("truetype");
+    font-weight: 300;
+}
+
+body {
+    font-family: "InterLight";
+    background-color: var(--bgColor);
+    color: var(--fontColor);
+    display: grid;
+    grid-template-rows: 20% 40% 40%;
+    grid-template-columns: 1fr 1fr;
+    height: 100vh;
+    width: 100vw;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* Location */
+.location {
+    font-family: "InterLight";
+    display: flex;
+    flex-direction: row;
+    font-size: 3rem;
+    grid-row: 1/2;
+    grid-column: 1/3;
+
+}
+
+.searchLocation {
+    font-family: "InterExtraLight";
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    padding: 0;
+}
+
+#locationInput {
+    font-family: "InterExtraLight";
+    padding: 0.1rem 0.2rem;
+    margin: none;
+    box-shadow: none;
+    border-radius: none;
+    outline: inherit;
+    width: 25rem;
+    border-right: none;
+    border: 1px var(--fontColor) solid;
+    border-right: none;
+    background-color: var(--bgColor);
+    font-size: 1.5rem;
+}
+
+.submitLocation {
+    padding: 0.1rem 0.2rem;
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border: 1px var(--fontColor) solid;
+    background-color: var(--bgColor);
+}
+
+.iconCondition {
+    display: flex;
+}
+
+/* Condition */
+.dateTime {
+    font-family: "InterExtraLight";
+    width: fit-content;
+    font-size: 1.5rem;
+
+}
+
+.conditionPlace {
+    font-family: "InterExtraLight";
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+    justify-content: center;
+    grid-row: 2/3;
+    grid-column: 1/2;
+}
+
+.conditionContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.btnTemp {
+    font-family: "InterExtraLight";
+    color: inherit;
+    cursor: pointer;
+    font-size: 1rem;
+    border: 1px var(--fontColor) solid;
+    background-color: var(--bgColor);
+    padding: 0.1rem 0.2rem;
+    /* margin-top: 1rem; */
+}
+
+#weatherIcon {
+    height: 8rem;
+    width: 8rem;
+    align-self: center;
+
+}
+
+/* Daily */
+.daily {
+    width: 50vw;
+    height: 200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 50px 200px;
+    gap: 1.5rem;
+    grid-row: 3/4;
+    grid-column: 1/3;
+}
+
+
+.daily>div {
+    font-family: "InterExtraLight";
+    grid-template-rows: 2/3;
+    display: flex;
+    flex-direction: column;
+}
+
+#dailyHeader {
+    grid-column: 1/4;
+    grid-row: 1/2;
+    font-size: 2rem;
+}
+
+.dailyDate {
+    font-size: 1.5rem;
+}
+
+.dailyCondition {
+    font-size: 1.5rem;
+}
+
+/* Further Details */
+.furtherDetails {
+    border: 1px solid black;
+    display: grid;
+}

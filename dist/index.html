@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <link
+    rel="shortcut icon"
+    type="image/x-icon"
+    href="icons8-forecast-30.png"
+  />
+    <script src="main.js" defer></script>
+  </head>
+  <body>    <div class="location">
+    <h2 id="city"></h2>
+    <h2 id="country"></h2>
+    <form action="" class="searchLocation">
+      <input type="text" id="locationInput" class="input" />
+      <button class="submitLocation" type="button">Search</button>
+    </form>
+  </div>
+  <div class="conditionPlace">
+    <ul class="dateTime">
+      <li id="dayWeek"></li>
+      <li id="date"></li>
+      <li id="time"></li>
+    </ul>
+    <div class="iconCondition">
+    <img id="weatherIcon" src="" alt="" />
+    <div class="conditionContainer">
+      <h1 id="condition"></h1>
+      <h1 id="temp_c"></h1>
+      <h1 id="temp_f" class="hidden"></h1>
+      <button type="button" class="btnTemp" id="switchF">Switch &#8457</button>
+    </div>
+    </div>
+  </div>
+  <div class="furtherDetails"></div>
+  <div class="daily">
+    <h1 id="dailyHeader">3 Day Forecast</h1>
+    <div id="day0">
+      <ul class="dateTime0">
+        <li class="dailyDate" id="dayWeek0"></li>
+        <li class="dailyDate" id="date0"></li>
+      </ul>
+      <div class="dailyCondition">
+        <img id="weatherIcon0" src="" alt="" />
+        <h1 id="condition0"></h1>
+        <h1 id="temp_c0"></h1>
+        <h1 id="temp_f0" class="hidden"></h1>
+      </div>
+    </div>
+    <div id="day1">
+      <ul class="dateTime1">
+        <li class="dailyDate" id="dayWeek1"></li>
+        <li class="dailyDate" id="date1"></li>
+      </ul>
+      <div class="dailyCondition">
+        <img id="weatherIcon1" src="" alt="" />
+        <h1 id="condition1"></h1>
+        <h1 id="temp_c1"></h1>
+        <h1 id="temp_f1" class="hidden"></h1>
+      </div>
+    </div>
+    <div id="day2">
+      <ul class="dateTime2">
+        <li class="dailyDate" id="dayWeek2"></li>
+        <li class="dailyDate" id="date2"></li>
+      </ul>
+      <div class="dailyCondition">
+        <img id="weatherIcon2" src="" alt="" />
+        <h1 id="condition2"></h1>
+        <h1 id="temp_c2"></h1>
+        <h1 id="temp_f2" class="hidden"></h1>
+      </div>
+    </div>
+  </div></body>
+</html>
