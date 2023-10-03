@@ -270,4 +270,35 @@ html {
 .furtherDetails {
     border: 1px solid black;
     display: grid;
+    grid-template-columns: 8fr 2fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+
+#feels {
+    grid-row: 1/2;
+    grid-column: 2/3;
+}
+
+#humidity {
+    grid-row: 2/3;
+    grid-column: 2/3;
+}
+
+#chance {
+    grid-row: 3/4;
+    grid-column: 2/3;
+}
+
+#wind {
+    grid-row: 4/5;
+    grid-column: 2/3;
+}
+
+.furtherImg {
+    width: 50px;
+    height: 50px;
+}
+
+.furtherContainer {
+    display: flex;
 }

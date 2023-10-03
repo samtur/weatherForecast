@@ -10,7 +10,12 @@ const populate = async function (
   time,
   dayWeek,
   temp_c,
-  temp_f
+  temp_f,
+  feels_c,
+  feels_f,
+  humidity,
+  chance,
+  wind
 ) {
   current = await weatherData.current;
   forecast = await weatherData.forecast;
@@ -60,6 +65,11 @@ const populate = async function (
   dayWeek.innerHTML = "Currently";
   temp_c.innerHTML = `${current.temp_c} &#8451`;
   temp_f.innerHTML = `${current.temp_f} &#8457`;
+  feels_c.innerHTML = `${current.feelslike_c} &#8451`;
+  feels_f.innerHTML = `${current.feelslike_f} &#8457`;
+  humidity.innerHTML = `${current.humidity} &#x25`;
+  chance.innerHTML = `${forecast.forecastday[0].day.daily_chance_of_rain} &#x25`;
+  wind.innerHTML = `${current.wind_mph} mph`;
   // Icon Code
   let weatherIcon = document.querySelector("#weatherIcon");
   let daily = false;

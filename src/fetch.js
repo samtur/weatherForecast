@@ -8,7 +8,12 @@ const fetchWeather = async function getWeatherData(
   time,
   dayWeek,
   temp_c,
-  temp_f
+  temp_f,
+  feels_c,
+  feels_f,
+  humidity,
+  chance,
+  wind
 ) {
   if (locationTxt === "") {
     let current = "";
@@ -31,7 +36,12 @@ const fetchWeather = async function getWeatherData(
       time,
       dayWeek,
       temp_c,
-      temp_f
+      temp_f,
+      feels_c,
+      feels_f,
+      humidity,
+      chance,
+      wind
     );
     console.log(weatherData);
     // Copy below when finished
@@ -56,7 +66,12 @@ const fetchWeather = async function getWeatherData(
       time,
       dayWeek,
       temp_c,
-      temp_f
+      temp_f,
+      feels_c,
+      feels_f,
+      humidity,
+      chance,
+      wind
     );
     console.log(weatherData);
   }
