@@ -11,13 +11,13 @@ const country = document.querySelector("#country");
 const dateTxt = document.querySelector("#date");
 const time = document.querySelector("#time");
 const daysArr = [
+  "Sunday",
   "Monday",
   "Tuesday",
   "Wednesday",
   "Thursday",
   "Friday",
   "Saturday",
-  "Sunday",
 ];
 const dayWeek = document.querySelector("#dayWeek");
 const temp_c = document.querySelector("#temp_c");

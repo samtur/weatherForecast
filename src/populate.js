@@ -35,9 +35,9 @@ const populate = async function (
     // Date to UK format
     let timestamp = forecastArr[i].date;
     let date = new Date(timestamp);
-    let day = date.getDay() - 1;
+    let day = date.getDay();
+
     let condition = forecastArr[i].day;
-    console.log(condition);
     i === 0
       ? (dayWeek.innerHTML = "Today")
       : (dayWeek.innerHTML = daysArr[day]);
