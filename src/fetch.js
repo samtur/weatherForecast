@@ -1,6 +1,6 @@
 import { upperConditionTxt, selectIcon } from "./functionality";
 
-const fetchWeather = async function getWeatherData(
+const fetchWeather = async (
   locationTxt,
   populate,
   daysArr,
@@ -13,8 +13,9 @@ const fetchWeather = async function getWeatherData(
   feels_f,
   humidity,
   chance,
+  chanceSnow,
   wind
-) {
+) => {
   if (locationTxt === "") {
     let current = "";
     let forecast = "";
@@ -41,10 +42,10 @@ const fetchWeather = async function getWeatherData(
       feels_f,
       humidity,
       chance,
+      chanceSnow,
       wind
     );
-    console.log(weatherData);
-    // Copy below when finished
+    // console.log(weatherData);
   } else {
     let current = "";
     let forecast = "";
@@ -54,6 +55,7 @@ const fetchWeather = async function getWeatherData(
       { mode: "cors" }
     );
     const weatherData = await response.json();
+    console.log(weatherData);
     populate(
       weatherData,
       current,
@@ -71,9 +73,10 @@ const fetchWeather = async function getWeatherData(
       feels_f,
       humidity,
       chance,
+      chanceSnow,
       wind
     );
-    console.log(weatherData);
+    // console.log(weatherData);
   }
 };
 

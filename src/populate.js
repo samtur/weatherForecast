@@ -15,6 +15,7 @@ const populate = async function (
   feels_f,
   humidity,
   chance,
+  chanceSnow,
   wind
 ) {
   current = await weatherData.current;
@@ -69,6 +70,7 @@ const populate = async function (
   feels_f.innerHTML = `${current.feelslike_f} &#8457`;
   humidity.innerHTML = `${current.humidity} &#x25`;
   chance.innerHTML = `${forecast.forecastday[0].day.daily_chance_of_rain} &#x25`;
+  chanceSnow.innerHTML = `${forecast.forecastday[0].day.daily_chance_of_snow} &#x25`;
   wind.innerHTML = `${current.wind_mph} mph`;
   // Icon Code
   let weatherIcon = document.querySelector("#weatherIcon");

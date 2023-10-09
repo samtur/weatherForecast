@@ -1,10 +1,10 @@
 import "./style.css";
-import { fetchWeather } from "./fetch";
 import { populate } from "./populate";
+import { selectIcon, upperConditionTxt } from "./functionality";
 
 const locationInput = document.querySelector("#locationInput");
 const searchBtn = document.querySelector(".submitLocation");
-let locationTxt = "";
+let locationTxt = "London";
 const condition = document.querySelector("#condition");
 const city = document.querySelector("#city");
 const country = document.querySelector("#country");
@@ -27,10 +27,61 @@ const feels_c = document.querySelector("#feels_cinfo");
 const feels_f = document.querySelector("#feels_finfo");
 const humidity = document.querySelector("#humidityinfo");
 const chance = document.querySelector("#chanceinfo");
+const chanceSnow = document.querySelector("#chanceSnowinfo");
 const wind = document.querySelector("#windinfo");
 const btnTemp = document.querySelector(".btnTemp");
+const errorMsg = document.querySelector("#error");
 
-// Fetching Data
+async function fetchWeather(
+  locationTxt,
+  populate,
+  daysArr,
+  dateTxt,
+  time,
+  dayWeek,
+  temp_c,
+  temp_f,
+  feels_c,
+  feels_f,
+  humidity,
+  chance,
+  chanceSnow,
+  wind
+) {
+  errorMsg.classList = "hidden";
+  let current = "";
+  let forecast = "";
+  let location = "";
+  const response = await fetch(
+    `http://api.weatherapi.com/v1/forecast.json?key=4da403286dd64dcfb0c200014233008&q=${locationTxt}&days=7&aqi=yes&alerts=no`,
+    { mode: "cors" }
+  );
+  const weatherData = await response.json();
+  populate(
+    weatherData,
+    current,
+    forecast,
+    location,
+    selectIcon,
+    upperConditionTxt,
+    daysArr,
+    dateTxt,
+    time,
+    dayWeek,
+    temp_c,
+    temp_f,
+    feels_c,
+    feels_f,
+    humidity,
+    chance,
+    chanceSnow,
+    wind
+  ).catch((err) => {
+    errorMsg.classList = "";
+  });
+
+  // console.log(weatherData);
+}
 
 fetchWeather(
   locationTxt,
@@ -45,6 +96,7 @@ fetchWeather(
   feels_f,
   humidity,
   chance,
+  chanceSnow,
   wind
 );
 
@@ -54,8 +106,8 @@ locationInput.addEventListener("input", () => {
   locationTxt = locationInput.value;
 });
 
-searchBtn.addEventListener("click", async function () {
-  await fetchWeather(
+searchBtn.addEventListener("click", function () {
+  fetchWeather(
     locationTxt,
     populate,
     daysArr,
@@ -68,6 +120,7 @@ searchBtn.addEventListener("click", async function () {
     feels_f,
     humidity,
     chance,
+    chanceSnow,
     wind
   );
   locationTxt = "";
